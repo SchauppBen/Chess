@@ -1,6 +1,6 @@
-package Pieces;
+package com.techelevator.Pieces;
 
-import ChessBoard.*;
+import com.techelevator.ChessBoard.*;
 
 public abstract class Piece {
 

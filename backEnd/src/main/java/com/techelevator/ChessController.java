@@ -1,16 +1,28 @@
-import ChessBoard.*;
-import Pieces.*;
+package com.techelevator;
 
-public class ChessApp {
+import com.techelevator.ChessBoard.*;
+import com.techelevator.Pieces.*;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-    private static ChessUI ui = new ChessUI();
-    private static FENReader fen = new FENReader();
-    private static boolean gameOver = false;
-    private static char playerTurn = 'w';
-    public static void main(String[] args) {
+@RestController
+public class ChessController {
 
+    private final ChessUI ui;
+    private final FENReader fen;
+    private char playerTurn = 'w';
+
+    public ChessController(ChessUI ui, FENReader fen) {
+        this.ui = ui;
+        this.fen = fen;
+    }
+
+    @GetMapping(path = "/board")
+    public Board startGame() {
         MoveValidator moveValidator = new MoveValidator();
-        Board board = defaultPosition();
+        return defaultPosition();
+        /*boolean gameOver = false;
         while(!gameOver) {
             ui.printFEN(fen.generateFEN(board));
             boolean checkMove = false;
@@ -33,10 +45,10 @@ public class ChessApp {
             } else {
                 playerTurn = 'w';
             }
-        }
+        }*/
     }
 
-    public static Board defaultPosition() {
+    public Board defaultPosition() {
         try {
             return fen.makeBoardFromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 

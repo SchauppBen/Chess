@@ -1,7 +1,10 @@
-package Pieces;
+package com.techelevator.Pieces;
 
-import ChessBoard.*;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.techelevator.ChessBoard.*;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "pieceType")
 public class Pawn extends Piece{
 
     private boolean hasMoved;

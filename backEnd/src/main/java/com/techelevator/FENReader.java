@@ -1,8 +1,11 @@
-import ChessBoard.*;
-import Pieces.*;
+package com.techelevator;
 
+import com.techelevator.ChessBoard.*;
+import com.techelevator.Pieces.*;
+import org.springframework.stereotype.Component;
+
+@Component
 public class FENReader {
-
 
     public String generateFEN(Board board) {
 

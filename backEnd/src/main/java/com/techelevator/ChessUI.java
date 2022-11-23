@@ -1,7 +1,12 @@
+package com.techelevator;
+
+import org.springframework.stereotype.Component;
+
 import java.util.Scanner;
 
+@Component
 public class ChessUI {
-    private Scanner keyboard = new Scanner(System.in);
+    private final Scanner keyboard = new Scanner(System.in);
     public String getUserInput() {
         return keyboard.nextLine();
     }

@@ -1,12 +1,13 @@
-package ChessBoard;
+package com.techelevator.ChessBoard;
 
-import Pieces.Piece;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.techelevator.Pieces.*;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
-
 
 public class Board {
 

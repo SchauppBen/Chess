@@ -1,4 +1,6 @@
-import ChessBoard.*;
+package com.techelevator;
+
+import com.techelevator.ChessBoard.*;
 
 
 public class MoveValidator {

@@ -1,6 +1,7 @@
-package ChessBoard;
+package com.techelevator.ChessBoard;
 
-import Pieces.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.techelevator.Pieces.*;
 
 public class Square {
 
